@@ -36,5 +36,4 @@ async def on_message(message):
         m = (await message.channel.fetch_message(message.reference.message_id)).content
         await message.channel.send((await Translator().translate(m, src="no")).text)
           
-
 client.run(DISCORD_TOKEN)
