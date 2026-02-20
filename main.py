@@ -1,18 +1,23 @@
-# This example requires the 'message_content' intent.
-import discord
+#usr/bin/env python3
+'''
+Name: HvaErDet?
+Author: Matthew Rogness
 
-# IMPORT THE OS MODULE.
+Description:
+A simple Discord bot that translates Norwegian text to English using the googletrans library.
+The bot listens for messages starting with "$nt" to translate the following text, and messages starting
+with "$rnt" to translate the content of the referenced message.
+'''
+
+
 import os
-
-# translate
-import asyncio
+import discord
 from googletrans import Translator
+from dotenv import load_dotenv
 
 intents = discord.Intents.default()
 intents.message_content = True
 
-# IMPORT LOAD_DOTENV FUNCTION FROM DOTENV MODULE.
-from dotenv import load_dotenv
 
 # LOADS THE .ENV FILE THAT RESIDES ON THE SAME LEVEL AS THE SCRIPT.
 load_dotenv()
