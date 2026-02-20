@@ -1,0 +1,5 @@
+# VSCode file
+*.DS_Stroe
+
+# environment files
+*.env
