@@ -44,4 +44,11 @@ async def on_message(message):
         await message.channel.send((await Translator().translate(m, src="no")).text)
 
 
-client.run(DISCORD_TOKEN)
+def main():
+    if not DISCORD_TOKEN:
+        raise SystemExit("DISCORD_TOKEN is not set. Add it to your environment or .env file.")
+    client.run(DISCORD_TOKEN)
+
+
+if __name__ == "__main__":
+    main()

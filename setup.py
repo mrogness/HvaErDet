@@ -28,5 +28,10 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    entry_points={
+        "console_scripts": [
+            "hvaerdet=main:main",
+        ],
+    },
     keywords="discord bot translation norwegian english",
 )

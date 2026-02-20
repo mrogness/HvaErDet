@@ -3,3 +3,7 @@
 
 # environment files
 *.env
+
+#pyache
+__pycache__/
+hvaerdet.egg-info/
