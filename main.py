@@ -4,7 +4,7 @@ import discord
 # IMPORT THE OS MODULE.
 import os
 
-#translate
+# translate
 import asyncio
 from googletrans import Translator
 
@@ -22,18 +22,21 @@ DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 
 client = discord.Client(intents=intents)
 
+
 @client.event
 async def on_ready():
-    print(f'We have logged in as {client.user}')
+    print(f"We have logged in as {client.user}")
+
 
 @client.event
 async def on_message(message):
-    if message.content.startswith('$nt'):
-        m=message.content[3:]
+    if message.content.startswith("$nt"):
+        m = message.content[3:]
         await message.channel.send((await Translator().translate(m, src="no")).text)
 
-    if message.reference and message.content.startswith('$rnt'):
+    if message.reference and message.content.startswith("$rnt"):
         m = (await message.channel.fetch_message(message.reference.message_id)).content
         await message.channel.send((await Translator().translate(m, src="no")).text)
-          
+
+
 client.run(DISCORD_TOKEN)
